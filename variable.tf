@@ -45,3 +45,15 @@ variable "private-data-subnet-az2_cidr_block" {
   description = "private data subnet AZ2 cidr block"
   type = string
 }
+
+variable "private_route_table_az1_cidr_block" {
+  default = "0.0.0.0/0"
+  description = "private route table az1 cidr block"
+  type = string
+  }
+
+  variable "private_route_table_az2_cidr_block" {
+  default = "0.0.0.0/0"
+  description = "private route table az2 cidr block"
+  type = string
+  }

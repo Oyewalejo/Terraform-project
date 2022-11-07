@@ -12,11 +12,11 @@ resource "aws_vpc" "vpc" {
 
 # create internet gateway and attach it to vpc
 # terraform aws create internet gateway
-resource "aws_internet_gateway" "internet_gateway" {
+resource "aws_internet_gateway" "igw" {
   vpc_id    = aws_vpc.vpc.id
 
   tags      = {
-    Name    = "internet_gateway"
+    Name    = "internet gateway"
   }
 }
 
@@ -53,7 +53,7 @@ resource "aws_route_table" "public_route_table" {
 
   route {
     cidr_block = var.public_route_table_cidr_block
-    gateway_id = aws_internet_gateway.internet_gateway.id
+    gateway_id = aws_internet_gateway.igw.id
   }
 
   tags       = {
